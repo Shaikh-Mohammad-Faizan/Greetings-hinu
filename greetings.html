@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheer Up 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
+      background: #ff6f91;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff3e6c;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.8rem;
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 24px;
+      animation: floatUp 5s linear infinite;
+      color: #fff;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hey, Beautiful 💕</h1>
+  <p>I made this little page just for you, Mahiiii!!!!!🌸</p>
+  
+  <button onclick="showMessage()">Click Me 💌</button>
+  <div id="message"></div>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById("message");
+      msg.style.display = "block";
+      msg.innerHTML = "You’re stronger, kinder, and more amazing than you think 💖<br>Never forget that you matter to me <br> If you are struggling with something tell me im here for you!🌟";
+    }
+
+    // Generate floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
